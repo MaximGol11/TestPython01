@@ -1,10 +1,7 @@
 import requests
 
+import set
 
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings
 
 def print_hi(name, age):
     # Use a breakpoint in the code line below to debug your script.
@@ -60,22 +57,6 @@ def set_request():
     print(response.json())
 
 
-def set_postman():
-    url = "https://smarty.mail.ru/api/v1/persons/set?oauth_token=2tbQtCJ6H9g4fjU4eH5jkrZRrw2qmfHVNCGYopbGSmTYoKJpPu&oauth_provider=mcs"
-
-    payload = {'meta': '{"space": "1", "images": [{"name": "file", "person_id": 2}]}'}
-    files = [
-        (
-        'file', ('ded1.jpg', open('C:\\Users\\Maximgo\\OneDrive\\Desktop\\egor\\gorshok_solo.jpg', 'rb'), 'image/jpeg'))
-    ]
-    headers = {
-        'accept': 'application/json'
-    }
-
-    response = requests.request("POST", url, headers=headers, data=payload, files=files)
-
-    print(response.json())
-
 
 def recognize_request():
     url = "https://smarty.mail.ru/api/v1/persons/recognize?oauth_token=2tbQtCJ6H9g4fjU4eH5jkrZRrw2qmfHVNCGYopbGSmTYoKJpPu&oauth_provider=mcs"
@@ -94,6 +75,6 @@ def recognize_request():
 
 
 if __name__ == '__main__':
-    set_postman()
+    set.set_postman()
     recognize_request()
 
